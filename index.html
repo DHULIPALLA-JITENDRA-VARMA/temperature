@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Temperature Converter</h1>
+
+    <form id="conv-form" class="converter" aria-labelledby="conv-heading">
+      <label for="temp-input">Enter temperature</label>
+      <input id="temp-input" type="number" step="any" placeholder="e.g. 32 or -10" required aria-required="true">
+
+      <label for="temp-range" class="range-label">Adjust with slider</label>
+      <input id="temp-range" type="range" min="-50" max="150" value="0">
+
+      <div class="live-control">
+        <label><input id="live-toggle" type="checkbox"> Live convert (auto)</label>
+      </div>
+
+      <div class="selectors">
+        <div class="select-group">
+          <label for="from-unit">From</label>
+          <select id="from-unit" aria-label="Input unit">
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+          </select>
+        </div>
+
+        <div class="select-group">
+          <label for="to-unit">To</label>
+          <select id="to-unit" aria-label="Output unit">
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="C">Celsius (°C)</option>
+            <option value="K">Kelvin (K)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="convert-btn" type="submit" class="btn">Convert</button>
+        <button id="swap-btn" type="button" class="btn secondary" title="Swap units">Swap units</button>
+        <button id="clear-btn" type="button" class="btn secondary" title="Clear input">Clear</button>
+      </div>
+
+      <div id="message" role="status" aria-live="polite"></div>
+
+      <div id="result" class="result" aria-live="polite">
+        <div class="result-inner">
+          <div class="thermometer" aria-hidden="true">
+            <div class="therm-fill" style="height:40%"></div>
+          </div>
+          <div class="result-text">
+            <div class="big-value"><span id="result-value">--</span> <span id="result-unit"></span></div>
+            <div class="small-note" id="result-note"></div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <section class="note">
+      <h2>Notes</h2>
+      <ul>
+        <li>Input field validates numeric values. Use decimal points (e.g. 36.6).</li>
+        <li>The converter supports Celsius, Fahrenheit and Kelvin.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

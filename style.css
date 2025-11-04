@@ -1,0 +1,32 @@
+:root{--bg:#f4f7fb;--card:#ffffff;--accent:#1a237e;--accent-2:#ffd700;--muted:#6b7280}
+*{box-sizing:border-box}
+body{font-family:Segoe UI, Roboto, Arial, sans-serif;background:var(--bg);color:#111;margin:0}
+.container{max-width:760px;margin:40px auto;padding:20px}
+h1{color:var(--accent);text-align:center}
+.converter{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 20px rgba(26,35,126,0.08)}
+.converter label{display:block;margin-top:8px;font-weight:600;color:var(--muted)}
+#temp-input{width:100%;padding:12px;border-radius:6px;border:1px solid #e6e9ef;margin-top:6px;font-size:1rem}
+.selectors{display:flex;gap:12px;margin-top:10px}
+.select-group{flex:1}
+select{width:100%;padding:10px;border-radius:6px;border:1px solid #e6e9ef;margin-top:6px}
+.actions{display:flex;gap:8px;margin-top:14px}
+.btn{padding:10px 14px;border-radius:8px;border:none;background:var(--accent-2);color:var(--accent);font-weight:700;cursor:pointer}
+.btn.secondary{background:transparent;border:1px solid rgba(26,35,126,0.12);color:var(--accent)}
+#message{margin-top:12px;color:#b00020;min-height:1.2em}
+.result{margin-top:12px;padding:12px;border-radius:8px;background:linear-gradient(90deg, rgba(255,215,0,0.04), rgba(26,35,126,0.02));font-weight:700;color:var(--accent);font-size:1.1rem}
+.result-inner{display:flex;gap:12px;align-items:center}
+.thermometer{width:48px;height:160px;border-radius:24px;background:linear-gradient(#fff,#f1f5f9);padding:6px;box-shadow:inset 0 4px 10px rgba(0,0,0,0.06);display:flex;align-items:flex-end}
+.therm-fill{width:100%;background:linear-gradient(180deg,#00aaff,#ff4500);border-radius:18px;transition:height 600ms cubic-bezier(.2,.9,.2,1)}
+.result-text{flex:1}
+.big-value{font-size:1.6rem;color:var(--accent);font-weight:800}
+.small-note{color:var(--muted);font-size:0.9rem;margin-top:6px}
+
+.range-label{display:block;margin-top:12px;font-weight:600;color:var(--muted)}
+#temp-range{width:100%;margin-top:6px}
+.live-control{margin-top:10px}
+
+/* animated number */
+.countup{transition:color 300ms ease}
+.note{margin-top:18px;background:transparent;padding:8px}
+.note h2{margin-bottom:6px;color:var(--accent)}
+@media (max-width:540px){.selectors{flex-direction:column}.actions{flex-direction:column}}
